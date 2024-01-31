@@ -18,3 +18,6 @@ We design a collection of prompts to align the LLMs with various recommendation 
 
 <img src="https://github.com/williamliujl/LLMRec/blob/main/docs/Prompt examples for four tasks-改.png" width="860" />
 
+## Datasets Acquire
+
+BaiduCloud: <https://pan.baidu.com/s/14ndz_wFpoHU0o5hCYp45lQ?pwd=qbt2> code: qbt2
