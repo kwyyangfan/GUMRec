@@ -10,7 +10,7 @@ Personalized recommendation plays a crucial role in Internet platforms, providin
 
 We expect the LLM to infer and integrate the three different aspects of user modeling. To achieve this, we employ chain-of-thought prompting in four logical steps as follows, reasoning about the user's attributes, preferences, and intentions.
 
-<img src="https://github.com/kwyyangfan/GUMRec/master/docs/Generative User Modeling-改.png" width="860" />
+<img src="https://github.com/kwyyangfan/GUMRec/master/docs/CoT-GUM-V3.png" width="860" />
 
 ## Prompt Construction for Recommendation Tasks
 
