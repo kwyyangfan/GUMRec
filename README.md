@@ -43,20 +43,15 @@ Evaluate with OpenAI [GPT-3.5](https://platform.openai.com/docs/models/gpt-3-5) 
 
 
 ----------
-### Training and Evaluating with Flan-T5<a name="runt5" />
+### Evaluating with ChatGLM2-6B<a name="ChatGLM" />
 
-Use the [main.py](main.py) script with command-line arguments to run the CoT-based GUMRec system. 
-
+Run the scripts:
 
 ```bash
-python main.py -c <cuda_index> -r [gumrec|prompt] -d [movie|book|beauty] -z [True|False]
+python generate.py -k <chatglm_key> -d [movie|book|beauty]
 ```
-Some important arguments:
 
-- `-c`, `--cuda_index`: Index of the GPU to use for computation (default is 0).
-- `-d`, `--data_name`: Name of the dataset. Choices are 'movie' or 'book' or 'beauty'(default is 'movie').
-- `-r`, `--reasoning`: Specifies the reasoning mode, with one-step prompt or multi-step CoT mode (default is 'CoT').
-- `-z`, `--zero_shot`: If True, the system directly performs zero-shot prediction, otherwise run the fine-tuning on the train set (default is True).
+Indicating your ChatGLM key. 
 
 
 ----------
