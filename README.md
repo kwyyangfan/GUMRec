@@ -18,6 +18,59 @@ We design a collection of prompts to align the LLMs with various recommendation 
 
 <img src="https://github.com/kwyyangfan/GUMRec/blob/master/docs/Prompt examples for four tasks-改.png" width="860" />
 
+## Code Usage<a name="code" />
+
+### Requirement<a name="requirement" />
+
+``` bash 
+conda create -n thor python=3.8
+```
+
+``` bash
+# CUDA 10.2
+conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
+
+# CUDA 11.3
+conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
+```
+
+```bash
+pip install -r requirements.txt
+```
+### LLMs<a name="llm" />
+
+Evaluate with OpenAI [GPT-3.5](https://platform.openai.com/docs/models/gpt-3-5) and ZhipuAI [ChatGLM2-6B](https://github.com/THUDM/ChatGLM-6B)
+
+
+----------
+### Training and Evaluating with Flan-T5<a name="runt5" />
+
+Use the [main.py](main.py) script with command-line arguments to run the CoT-based GUMRec system. 
+
+
+```bash
+python main.py -c <cuda_index> -r [gumrec|prompt] -d [movie|book|beauty] -z [True|False]
+```
+Some important arguments:
+
+- `-c`, `--cuda_index`: Index of the GPU to use for computation (default is 0).
+- `-d`, `--data_name`: Name of the dataset. Choices are 'movie' or 'book' or 'beauty'(default is 'movie').
+- `-r`, `--reasoning`: Specifies the reasoning mode, with one-step prompt or multi-step CoT mode (default is 'CoT').
+- `-z`, `--zero_shot`: If True, the system directly performs zero-shot prediction, otherwise run the fine-tuning on the train set (default is True).
+
+
+----------
+
+### Evaluating with GPT-3.5<a name="GPT" />
+
+Go to the utils-evaluate fold, and run the metrics scripts:
+
+```bash
+python metrics4rec.py -k <openai_key> -d [movie|book|beauty]
+```
+
+Indicating your openai key. 
+  
 ## Datasets Acquire
 
 BaiduCloud: <https://pan.baidu.com/s/14ndz_wFpoHU0o5hCYp45lQ?pwd=qbt2> code: qbt2
